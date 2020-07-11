@@ -28,7 +28,3 @@ sSampleDealingFuncs.pfSampleSad[16x16] --> WelsSampleSad16x16_c_sse
 
 
 
-
-
-
-
