@@ -10,7 +10,7 @@
 
 - front end / back end
 
-  现代cpu采用流水线处理方式，通常首先从内存中获取指令，放入指令队列。然后，在指令队列中解码指令到微操作，还会对多个指令的微操作进行混合。然后把微操作给到操作执行单元，算术运算单元，浮点乘法单元等等。现代的cpu一个cycle可以执行多个微操作，因此指令队列在一个cycle中会发送多个解码后的微操作到执行单元。在这个流程中，获取指令和解码指令的部分称为 front end，执行微操作的部分称为back end或者execution core。当一个cycle中有某些微操作无法被执行，此时这个cycle就被浪费了。这个浪费的来源可能是指令没有被及时获取，解码；也有可能是微操作正在等待内存资源。如果是前者就称为front end bound，后者就称为back end bound。如果微操作被顺利执行则为retire。
+  现代cpu采用流水线处理方式，通常首先从内存中获取指令，放入指令队列。然后，在指令队列中解码指令到微操作，还会对多个指令的微操作进行混合。然后把微操作给到操作执行单元，算术运算单元，浮点乘法单元等等。现代的cpu一个cycle可以执行多个微操作，因此指令队列在一个cycle中会发送多个解码后的微操作到执行单元。在这个流程中，获取指令和解码指令的部分称为 front end，执行微操作的部分称为back end或者execution core。当一个cycle中有某些微操作无法被执行，此时这个cycle就被浪费了。这个浪费的来源可能是指令没有被及时获取，解码；也有可能是微操作正在等待内存资源或者期望的执行单元(浮点运算单元，simd运算单元)超负荷运转。如果是前者就称为front end bound，后者就称为back end bound。如果微操作被顺利执行则为retire。
 
   > https://software.intel.com/content/www/us/en/develop/documentation/vtune-help/top/reference/cpu-metrics-reference/front-end-bound.html
   >
@@ -68,6 +68,8 @@ add ebx, CONST2; ebx=CONST1 or CONST2
 
 ## back end bound
 
+### memory bound
+
 最大的back end bound一般是memory bound，合理利用内存资源对优化back end很重要。
 
 sandy bridge之后，会有多个port读取cache。如下代码
@@ -81,3 +83,7 @@ sum+=buff[i];
 ```
 
 每次循环内部的加法会依赖前一次的结果，这样会阻碍back end的并行计算。
+
+### Core bound
+
+cpu中的不同种类的执行单元的数量是不同的，早期的cpu整数执行单元比较多，浮点数较少。而整数执行单元中除法执行单元较少并且更加复杂。Core bound是指特定的执行单元正在超负荷运转。如果大量的指令使用除法运算，可能会导致Core bound

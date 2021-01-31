@@ -7,7 +7,7 @@ WelsEncoderEncodeExt
 	pFbi->uiTimeStamp = GetTimestampForRc()//计算当前时间
 	
 	// perform csc/denoise/downsample/padding, generate spatial layers
-	  iSpatialNum = pCtx->pVpp->BuildSpatialPicList (pCtx, pSrcPic);
+	  iSpatialNum = pCtx->pVpp->BuildSpatialPicList (pCtx, pSrcPic);//进行frame drop判别
 	//预处理，产生空域分层
 	
 	pCtx->pFuncList->pfRc.pfWelsUpdateMaxBrWindowStatus()
