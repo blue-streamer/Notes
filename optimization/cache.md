@@ -98,6 +98,10 @@ L1d中的数据尽可能使用，局部化
 
 > https://stackoverflow.com/questions/48994494/how-to-properly-use-prefetch-instructions
 
+实际上，很多情况下prefetch 很难有显著的效果
+
+> https://lemire.me/blog/2018/04/30/is-software-prefetching-__builtin_prefetch-useful-for-performance/
+
 ### cache associativity
 
 > http://igoro.com/archive/gallery-of-processor-cache-effects/
