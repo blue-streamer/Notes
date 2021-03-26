@@ -82,25 +82,26 @@ pfIDctFourT4 --> WelsIDctFourT4Rec_c
 
 
 
+Rate control
+
+pRcf->pfWelsRcPictureInit = WelsRcPictureInitGom;
+pRcf->pfWelsRcPictureInfoUpdate = WelsRcPictureInfoUpdateGomTimeStamp;
+pRcf->pfWelsRcMbInit = WelsRcMbInitGom;
+pRcf->pfWelsRcMbInfoUpdate = WelsRcMbInfoUpdateGom;
+
+pRcf->pfWelsRcPicDelayJudge = WelsRcFrameDelayJudgeTimeStamp;
+pRcf->pfWelsCheckSkipBasedMaxbr = NULL;
+pRcf->pfWelsUpdateBufferWhenSkip = NULL;
+pRcf->pfWelsUpdateMaxBrWindowStatus = UpdateMaxBrCheckWindowStatusTimeStamp;
+pRcf->pfWelsRcPostFrameSkipping = NULL;
 
 
 
 
-Python 
 
-mb_info["MbX"] = mb_x
-mb_info["MbY"] = mb_y
-    mb_info["MbType"] = mb_type
-    mb_info["CBP"] = mb_cbp
-    mb_info["I_16x16"] = I_16x16_token_map
-    mb_info["I_4x4"] = I_4x4_token_map
-    mb_info["block4x4"] = block4x4_list
-    mb_info["hash"] = hash_list
-    mb_info["I_IBC"] = I_IBC_list
-    mb_info["ME"] = p_me_map
-    mb_info["Bits"] = bits
 
-mb_info["ME"]\["totalSad"\] = totalSad
+
+
 
 
 

@@ -1,7 +1,5 @@
-# openh264 encoder nots
-
 openh264编码的主函数是WelsEncoderEncodeExt
-```
+```c++
 WelsEncoderEncodeExt
 {
 	pFbi->uiTimeStamp = GetTimestampForRc()//计算当前时间
@@ -78,7 +76,7 @@ WelsEncoderEncodeExt
 
 openh264中提供动态和非动态的slice划分模式，动态划分是为了更好的兼顾网络丢包率高的情况。控制当前slice大小尽量接近但不超过传输层payload的大小。这样可以保证一个包一个slice，当前丢包不会影响后面slice的解码。<br>
 slice编码函数设置
-```
+```c++
 // 1st index: 0: for P pSlice; 1: for I pSlice;
 // 2nd index: 0: for non-dynamic pSlice; 1: for dynamic I pSlice;
 static const PWelsCodingSliceFunc g_pWelsSliceCoding[2][2] = {
@@ -87,7 +85,7 @@ static const PWelsCodingSliceFunc g_pWelsSliceCoding[2][2] = {
 };
 ```
 以WelsCodePSlice()为例，一个slice的编码主函数为
-```
+```c++
 WelsMdInterMbLoop
 {
 ...

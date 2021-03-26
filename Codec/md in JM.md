@@ -1,3 +1,0 @@
-encode_one_slice
-
-init_rdopt
