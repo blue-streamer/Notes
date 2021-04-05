@@ -23,3 +23,16 @@ https://zhuanlan.zhihu.com/p/219925964
 Catch up with SOTA performance, i.e., as reported in Cheng 2020 CVPR
 
 https://zhuanlan.zhihu.com/p/219925964
+
+
+
+rdo paper
+
+original mind
+
+Affine 266/av1 LU分解
+
+Obmc
+
+ddl 4.5
+
