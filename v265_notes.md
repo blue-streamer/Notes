@@ -214,7 +214,7 @@ cu的深度预测是通过left，top，topRight，topLeft的深度加权预测�
 
 #### tCuSplitInfo
 
-在processTree的流程中首先会判断使用使用up2Down，其中**tCuSplitInfo**中的**enFastGoDown**的统计是进行判断的一个依据
+在processTree的流程中首先会判断使用up2Down，其中**tCuSplitInfo**中的**enFastGoDown**的统计是进行判断的一个依据
 
 如果使用up2Down：首先计算curCu的md，然后计算subCu的md。中间会有跳过策略
 
