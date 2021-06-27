@@ -42,9 +42,13 @@ CByteVCEncode::encodeFrame函数是一帧的编码入口
 
 ```c++
 int CByteVCEncode::encodeFrame(){
+  TInputPic* pic = m_inputPicManage[bAlphaChannel]->onNewInputPic(pInpic, &DPBForInputPic);
+  //new frame incoming, 转换为TInputPic，并放入queue
   m_PreAnalyzeTaskManager->executeTasks(pic);//前处理
-	m_taskManage->executeTasks(frameInfo);//编码
-  onFrameFinish(frameInfo);//写码流
+  while ((inPic = m_inputPicManage[bAlphaChannel]->getPicTobeEncode(pInpic)) != NULL) {//update queue，rc分析，lookahead参考帧决策等。最后取出待编码帧
+		m_taskManage->executeTasks(frameInfo);//编码
+  	onFrameFinish(frameInfo);//写码流
+  }
 }
 ```
 
@@ -227,8 +231,6 @@ tCuSplitInfo在一个slice中随着ctu的编码一直进行统计，会统计不
 **enFastGoUpByCost**：如果split >= (5/4)nonSplit，则设置为true
 
 ### processCuMdInter
-
-
 
 checkMerge2Nx2N
 

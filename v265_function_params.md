@@ -70,6 +70,14 @@ g_sse_range_Function --> sse_range_c
 
 g_sse_Function --> sse_c
 
+Rc:
+
+initFrameInfoOnFrameStart
+
+calcLowResIntraCost
+
+calcFrameCost
+
 
 
 ### param

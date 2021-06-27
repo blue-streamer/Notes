@@ -28,19 +28,21 @@ https://zhuanlan.zhihu.com/p/219925964
 
 rdo paper
 
-original mind
-
 Affine 266/av1 LU分解
 
 Obmc
 
-ddl 4.5
 
 
+Summary, ratecontrol
 
+CInputPicManage::scenecutDetect LTR
 
+summary，统计学习，主要总结决策树，逻辑斯特回归（贝叶斯），朴素贝叶斯
 
-贝叶斯定理
+Lookahead  qa  cutree
 
-大数定理
+paper 1. ml partition 2. Invers transform
+
+为什么使用bits = k * cplx/qscale的模型？1. 从残差编码的角度理解，2. 统计实际编码数据，进行分析，3. qscale，qstep与lambda关系 4. 模型是否可以改进
 

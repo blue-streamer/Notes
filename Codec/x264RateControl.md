@@ -28,7 +28,6 @@ x264中有多种码率控制的方式，大致分为single pass和mulit pass两�
    cplxcount[i+1] = cplxcount[i]*0.5 + 1
    $$
    
-
 3. 计算qscale(即$\lambda$).
 
    x264有一个参数，qcompress。代表了帧的复杂度对码控的影响。这里有一个相关的变量：

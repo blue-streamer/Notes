@@ -51,4 +51,3 @@ gradX \approx \frac{5H}{2048}\\
 gradY \approx \frac{5V}{2048}
 $$
 
-
