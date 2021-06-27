@@ -44,5 +44,5 @@ Lookahead  qa  cutree
 
 paper 1. ml partition 2. Invers transform
 
-为什么使用bits = k * cplx/qscale的模型？1. 从残差编码的角度理解，2. 统计实际编码数据，进行分析，3. qscale，qstep与lambda关系 4. 模型是否可以改进
+为什么使用bits = k * cplx/qscale的模型？1. 从残差编码的角度理解，2. 统计实际编码数据，进行分析，3. qscale，qstep与lambda关系 4. 模型是否可以改进 5. 预测模型是否准确，统计分析
 
