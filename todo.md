@@ -34,6 +34,8 @@ Obmc
 
 
 
+qp=40，模式决策有问题，模糊块sse更小
+
 Summary, ratecontrol
 
 CInputPicManage::scenecutDetect LTR
